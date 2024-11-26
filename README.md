@@ -60,8 +60,8 @@ English (US), Hindi (India), Spanish (Spain), French (France), German (Germany),
 1.  **Clone the Repository:**  Let's get started! 🚀
 
     ```bash
-    git clone <repository_url>
-    cd <project_directory>
+    git clone https://github.com/AnonymousCoderArtist/Signify.git
+    cd Signify
     ```
 
 2.  **Install Dependencies:**  All the necessary packages. 📦
@@ -71,7 +71,7 @@ English (US), Hindi (India), Spanish (Spain), French (France), German (Germany),
     ```
 
     **Requirements:**
-    * Python 3.x
+    * Python 3.11 +
     * `selenium`
     * `playwright`
     * `eel`
