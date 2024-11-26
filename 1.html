@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-to-Sign Language Converter</title>
+    <link rel="stylesheet" href="style1.css">
+    <!-- <script type="text/javasQcript" src="/eel.js"></script> -->
+</head>
+<body>
+    <div id="particles-js"></div>
+    <div class="container">
+        <header>
+            <h2>Signify</h2>
+        </header>
+
+        <main>
+            <div class="video-container neon-border">
+                <video id="signVideo" autoplay loop controls style="display: none;"></video>
+                <img id="videoPlaceholder" src=" " alt=" ">
+                <div id="loadingIndicator" class="loading" style="display: none;">Generating...</div>
+            </div>
+            
+            <input type="text" id="textInput" placeholder="Enter text to translate..." aria-label="Text to translate">
+            <button id="translateBtn">Translate</button>
+            <button id="micBtn">Mic</button>
+            <p id="errorMessage" class="error-message" style="display: none;"></p>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: '#4a9fff' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.5, random: false },
+                size: { value: 3, random: true },
+                line_linked: { enable: true, distance: 150, color: '#4a9fff', opacity: 0.4, width: 1 },
+                move: { enable: true, speed: 2, direction: 'none', random: false, straight: false, out_mode: 'out', bounce: false }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' }, resize: true },
+                modes: { repulse: { distance: 100, duration: 0.4 }, push: { particles_nb: 4 } }
+            },
+            retina_detect: true
+        });
+    </script>
+    <script src="script1.js"></script>
+</body>
+</html>

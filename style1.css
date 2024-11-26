@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+
+:root {
+  --primary-color: #00ffff;
+  --secondary-color: #ff00ff;
+  --bg-color: #0a0e17;
+  --text-color: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  padding: 40px 20px;
+  z-index: 1;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h2{
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  background: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+.video-container {
+  width: 100%;
+  height: 560px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+#videoPlaceholder,
+#signVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.input-container {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 20px;
+}
+
+#textInput {
+  flex-grow: 1;
+  width: 54%;
+  padding: 15px;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+#textInput:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+#translateBtn, #micBtn {
+  padding: 15px 30px;
+  font-size: 1rem;
+  font-weight: 700;
+  background-color: #4a9fff;
+  color: whitesmoke;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+#translateBtn:before, #micBtn:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+#translateBtn:hover:before, #micBtn:hover:before {
+  transform: scaleX(1);
+}
+
+#translateBtn:hover, #micBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 255, 255, 0.4);
+}
+
+#translateBtn:active, #micBtn:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 10px rgba(0, 255, 255, 0.4);
+}
+
+
+footer {
+  margin-top: 40px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+}
+
+.error-message {
+  color: #ff4444;
+  text-align: center;
+  margin-top: 10px;
+  font-weight: 300;
+}
+
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.gradient-border {
+  --borderWidth: 3px;
+  position: relative;
+  border-radius: 15px;
+}
+
+.gradient-border:after {
+  content: "";
+  position: absolute;
+  top: calc(-1 * var(--borderWidth));
+  left: calc(-1 * var(--borderWidth));
+  height: calc(100% + var(--borderWidth) * 2);
+  width: calc(100% + var(--borderWidth) * 2);
+  border-radius: 15px;
+  z-index: -1;
+  animation: gradientAnimation 3s ease alternate infinite;
+  background-size: 300% 300%;
+}
