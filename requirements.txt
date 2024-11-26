@@ -1,0 +1,5 @@
+selenium
+playwright
+eel
+opencv-python
+webdriver_manager
