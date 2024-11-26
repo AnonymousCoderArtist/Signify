@@ -11,25 +11,107 @@
     <div id="particles-js"></div>
     <div class="container">
         <header>
-            <h1>Signify</h1>
+            <h2>Signify</h2>
         </header>
 
         <main>
             <div class="video-container neon-border">
                 <video id="signVideo" autoplay loop controls style="display: none;"></video>
-                <img id="videoPlaceholder" src="/placeholder.svg?height=300&width=800" alt="Sign language video">
+                <img id="videoPlaceholder" src=" " alt=" ">
                 <div id="loadingIndicator" class="loading" style="display: none;">Generating...</div>
             </div>
             
-            <input type="text" id="textInput" placeholder="Enter text to translate..." aria-label="Text to translate">
-            <button id="translateBtn">Translate to Sign Language</button>
+            <div class="input-container">
+                <input type="text" id="textInput" placeholder="Enter text to translate..." aria-label="Text to translate">
+                <button id="translateBtn">Translate</button>
+                <button id="micBtn">Mic</button>
+                <button id="settingsBtn">Settings</button>
+            </div>
             <p id="errorMessage" class="error-message" style="display: none;"></p>
         </main>
-
-        <footer>
-            <p>&copy; 2023 Text-to-Sign Language Converter. All rights reserved.</p>
-        </footer>
     </div>
+
+    <!-- Settings Modal -->
+    <div id="settingsModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Settings</h3>
+            <div class="settings-container">
+                <div class="setting-option">
+                    <label for="languageSelect">Sign Language:</label>
+                    <select id="languageSelect">
+                        <option value="American">American</option>
+                        <option value="Indian">Indian</option>
+                        <option value="Australian">Australian</option>
+                        <option value="German">German</option>
+                        <option value="French">French</option>
+                        <option value="British">British</option>
+                        <option value="International">International</option>
+                        <option value="Swiss-German">Swiss-German</option>
+                        <option value="Swiss-French">Swiss-French</option>
+                        <option value="Swiss-Italian">Swiss-Italian</option>
+                        <option value="Spanish">Spanish</option>
+                        <option value="Jordanian">Jordanian</option>
+                        <option value="Belarusian">Belarusian</option>
+                        <option value="Bulgarian">Bulgarian</option>
+                        <option value="Chinese">Chinese</option>
+                        <option value="Croatian">Croatian</option>
+                        <option value="Czech">Czech</option>
+                        <option value="Danish">Danish</option>
+                        <option value="New Zealand">New Zealand</option>
+                        <option value="Estonian">Estonian</option>
+                        <option value="Finnish">Finnish</option>
+                        <option value="Austrian">Austrian</option>
+                        <option value="Cypriot">Cypriot</option>
+                        <option value="Greek">Greek</option>
+                        <option value="Icelandic">Icelandic</option>
+                        <option value="Italian">Italian</option>
+                        <option value="Japanese">Japanese</option>
+                        <option value="Latvian">Latvian</option>
+                        <option value="Lithuanian">Lithuanian</option>
+                        <option value="Persian">Persian</option>
+                        <option value="Polish">Polish</option>
+                        <option value="Brazilian">Brazilian</option>
+                        <option value="Portuguese">Portuguese</option>
+                        <option value="Romanian">Romanian</option>
+                        <option value="Russian">Russian</option>
+                        <option value="Slovakian">Slovakian</option>
+                        <option value="Argentine">Argentine</option>
+                        <option value="Chilean">Chilean</option>
+                        <option value="Cuban">Cuban</option>
+                        <option value="Mexican">Mexican</option>
+                        <option value="Swedish">Swedish</option>
+                        <option value="Turkish">Turkish</option>
+                        <option value="Ukrainian">Ukrainian</option>
+                        <option value="Pakistan">Pakistan</option>
+                        <!-- Add more languages as needed -->
+                    </select>
+                </div>
+                <div class="setting-option">
+                    <label for="speechLanguageSelect">Speech Recognition Language:</label>
+                    <select id="speechLanguageSelect">
+                        <option value="en">English (US)</option>
+                        <option value="hi">Hindi (India)</option>
+                        <option value="es-ES">Spanish (Spain)</option>
+                        <option value="fr-FR">French (France)</option>
+                        <option value="de-DE">German (Germany)</option>
+                        <option value="zh-CN">Chinese (China)</option>
+                        <option value="bn-IN">Bengali (India)</option>
+                        <option value="gu-IN">Gujarati (India)</option>
+                        <option value="kn-IN">Kannada (India)</option>
+                        <option value="ml-IN">Malayalam (India)</option>
+                        <option value="mr-IN">Marathi (India)</option>
+                        <option value="pa-IN">Punjabi (India)</option>
+                        <option value="ta-IN">Tamil (India)</option>
+                        <option value="te-IN">Telugu (India)</option>
+                        <option value="or-IN">Odia (India)</option>
+                        <!-- Add more languages as needed -->
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
         particlesJS('particles-js', {
